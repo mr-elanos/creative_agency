@@ -359,3 +359,161 @@ body{
     }
 }
 
+.swiper {
+    padding: 0px -rem(2);
+    &__title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        @include adaptiv-font(60, 30);
+        line-height: 1.2;
+        text-transform: uppercase;
+        margin-bottom: -rem(120);
+        & span{
+            font-weight: 400;
+            letter-spacing: -rem(1);
+            @include adaptiv-font(42, 20);
+            margin: 0px -rem(10);
+        }
+    }
+    &-slide {
+        padding: -rem(39) -rem(49) -rem(21);
+        border: -rem(1) solid #000000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: -rem(67);
+        opacity: 0.3;
+        transition: opacity 0.5s ease-in-out;
+        &-active{
+            opacity: 1;
+        }
+    }
+    &-pagination-bullet{
+        display: inline-block;
+        width: -rem(10);
+        height: -rem(10);
+        background-color: #000000;
+        border-radius: 0px;
+        &:hover{
+            background-color: #00000083;
+        }
+    }
+    &__text {
+        margin-bottom: -rem(29);
+        @include adaptiv-font(20, 16);
+        line-height: 1.3;
+        text-align: center;
+    }
+    &__img {
+        max-width: -rem(80);
+        max-height: -rem(80);
+        margin-bottom: -rem(20);
+        & img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__name, &__proff{
+        @include adaptiv-font(17, 13);
+        line-height: 1.3;
+        text-transform: uppercase;
+        margin-bottom: -rem(5);
+    }
+    &__proff {
+        text-transform: capitalize;
+        margin-bottom: -rem(35);
+    }
+}
+
+.skills {
+    padding: -rem(105) 0px -rem(134);
+    &__content{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background-color: #000000;
+    }
+    &__left {
+        flex: 0 1 50%;
+        margin: -rem(20) auto;
+        color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__title {
+        font-weight: 700;
+        @include adaptiv-font(60, 40);
+        line-height: 1.2;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        margin-bottom: -rem(94);
+        & span{
+            padding: 0px -rem(11);
+            font-weight: 400;
+            @include adaptiv-font(42, 20);
+            letter-spacing: -rem(1);
+        }
+    }
+    &__text {
+        @include adaptiv-font(15, 12);
+        line-height: 1.3;
+        color: rgba(255, 255, 255, 0.7);
+    }
+    & ul, &__text{
+        width: 59%;
+    }
+    & li:first-child::after{
+        content: '';
+        display: block;
+        margin: -rem(10) 0px -rem(30);
+        width: 80%;
+        height: -rem(1);
+        background-color: #FFFFFF;
+    }
+    & li:nth-child(2)::after{
+        content: '';
+        display: block;
+        margin: -rem(10) 0px -rem(30);
+        width: 41%;
+        height: -rem(1);
+        background-color: #FFFFFF;
+    }
+    & li:nth-child(3)::after{
+        content: '';
+        display: block;
+        margin: -rem(10) 0px -rem(30);
+        width: 70%;
+        height: -rem(1);
+        background-color: #FFFFFF;
+    }
+    & li:last-child::after{
+        content: '';
+        display: block;
+        margin: -rem(10) 0px -rem(15);
+        width: 100%;
+        height: -rem(1);
+        background-color: #FFFFFF;
+    }
+    & li p{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        line-height: 1.25;
+        letter-spacing: -rem(1);
+        text-transform: uppercase;
+        @include adaptiv-font(18, 14);
+    }
+    &__right {
+        flex: 0 0 50%;
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}
