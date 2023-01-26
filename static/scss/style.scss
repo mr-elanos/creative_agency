@@ -1,0 +1,361 @@
+@import './null_style.scss';
+
+/*Функция для адаптации под широкие экраны*/
+@function -rem($px){
+    @return $px / 16 + rem;
+}
+
+/*Миксин для адаптации шрифтов*/
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+/*Шрифт по-умолчанию под большие экраны(адаптация блоков через rem)*/
+@media (min-width: 2000px){
+    html, body{
+        font-size: 20px; 
+    }
+}
+@media (min-width: 2500px){
+    html, body{
+        font-size: 25px;
+    }
+}
+@media (min-width: 3000px){
+    html, body{
+        font-size: 30px; 
+    }
+}
+@media (min-width: 3700px){
+    html, body{
+        font-size: 60px; 
+    }
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: -rem(1230);
+    padding: 0px -rem(15);
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    padding-bottom: -rem(115);
+    &__container{
+        position: relative;
+    }
+    &__content{
+        display: flex;
+        justify-content: space-between;
+        padding-top: -rem(30);
+    }
+    &__left {
+        & p:first-child {
+            margin-bottom: -rem(15);
+            @include adaptiv-font(18, 14);
+            line-height: 1.1;
+            color: #747474;
+        }
+        & p:last-child {
+            @include adaptiv-font(18, 14);
+            line-height: 1.1;
+            color: #000000;
+        }
+    }
+    &__nav {
+        & ul{
+            display: flex;
+            & li{
+                margin-left: -rem(20);
+            }
+            & li:first-child{
+                margin-left: 0px;
+            }
+            & a{
+                font-weight: 700;
+                @include adaptiv-font(18, 14);
+                line-height: 1.1;
+                color: #000000;
+                transition: all 0.2s linear;
+                text-transform: capitalize;
+                &:hover{
+                    color: #747474;
+                }
+            }
+        }
+    }
+    &__logo {
+        position: absolute;
+        top:-rem(59);
+        left:50%;
+        transform:translatex(-50%);
+        width: -rem(410);
+        height: -rem(234);
+        & img{
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+    }
+}
+
+.main {
+    display: flex;
+    padding-bottom: -rem(129);
+    &__image {
+        flex: 0 0 50%;
+        height: -rem(634);
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    &__content {
+        margin: -rem(102) -rem(90) 0px -rem(59);
+        & h1{
+            font-weight: 700;
+            @include adaptiv-font(60, 30);
+            text-transform: uppercase;
+            margin-bottom: -rem(91);
+            & span{
+                font-weight: 400;
+                @include adaptiv-font(50, 20);
+                line-height: 1.2;
+                letter-spacing: -rem(1);
+            }
+        }
+    }
+    &__btn {
+        width: -rem(140);
+        height: -rem(140);
+        text-align: center;
+        background-color: #000000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s linear;
+        & p{
+            display: block;
+            @include adaptiv-font(14, 10);
+            line-height: 1.4;
+            letter-spacing: -rem(1);
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        &:hover{
+            background-color: #747474;
+            cursor: pointer;
+            transform: scale(0.9, 0.9);
+        }
+    }
+}
+
+.partners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: -rem(119);
+    &__text {
+        margin: 0px -rem(10) -rem(47);
+        text-align: center;
+        @include adaptiv-font(27, 19);
+        line-height: 1.2;
+        text-transform: uppercase;
+        & span{
+            @include adaptiv-font(22, 14);
+        }
+    }
+    &__img {
+        max-width: -rem(1020);
+        max-height: -rem(94);
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.perfect {
+    display: flex;
+    justify-content: center;
+    padding-bottom: -rem(160);
+    & h2{
+        @include adaptiv-font(54, 26);
+        line-height: 1.5;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: -rem(32);
+        & span{
+            font-weight: 700;
+            @include adaptiv-font(60, 30);
+        }
+    }
+    &__content{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__left {
+        flex: 0 0 63%;
+        & p{
+            width: -rem(377);
+            @include adaptiv-font(19, 15);
+            line-height: 1.3;
+            color: #747474;
+            margin-bottom: -rem(21);
+        }
+    }
+    &__right {
+        margin-top: -rem(220);
+        flex: 1 0 31%
+    }
+    & ul {
+        & li{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: -rem(10);
+            @include adaptiv-font(19, 15);
+            line-height: 1.3;
+            color: #747474;
+            text-transform: capitalize;
+        }
+    }
+    & ul:first-child, & ul:last-child{
+        & li:first-child{
+            font-weight: 700;
+            @include adaptiv-font(20, 16);
+            line-height: 1.5;
+            text-transform: uppercase;
+            color: #000000;
+            padding-bottom: -rem(16);
+            margin-bottom: -rem(20);
+            border-bottom: -rem(1) solid #000000;
+        }
+    }
+    & ul:first-child{
+        & li:last-child{
+            margin-bottom: -rem(70);
+        }
+    }
+}
+
+.works {
+    padding-bottom: -rem(110);
+    & h2{
+        @include adaptiv-font(50, 20);
+        line-height: 1.4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        margin-bottom: -rem(20);
+        & span{
+            font-weight: 700;
+            @include adaptiv-font(60, 30);
+            line-height: 1.2;
+        }
+    }
+    &__columns {
+        display: flex;
+        justify-content: center;
+        padding: 0px -rem(15);
+    }
+    &__left {
+        margin-right: -rem(20);
+    }
+    &__item {
+        & img{
+            width: -rem(470);
+            height: -rem(502);
+            object-fit: cover;
+            margin-bottom: -rem(40);
+        }
+        & p{
+            @include adaptiv-font(18, 14);
+            line-height: 1.3;
+            text-align: center;
+            color: #747474;
+            margin-bottom: -rem(20);
+        }
+    }
+    &__title {
+        font-weight: 700;
+        @include adaptiv-font(22, 18);
+        line-height: 1.3;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    &__right {
+        & div:first-child{
+            margin-top: -rem(117);
+        }
+    }
+}
+
+.improve {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // position: relative;
+    padding-bottom: -rem(150);
+    &__content {
+        margin: 0px -rem(15) 0px -rem(191);
+        flex: 0 0 30%;
+        & h2{
+            font-weight: 700;
+            @include adaptiv-font(48, 18);
+            line-height: 1.1;
+            letter-spacing: -rem(1);
+            text-transform: uppercase;
+            margin-bottom: -rem(43);
+            & span{
+                font-weight: 400;
+            }
+        }
+    }
+    & div:last-child h3{
+        margin-top: -rem(40);
+    }
+    &__content-block {
+        & h3{
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            @include adaptiv-font(22, 18);
+            line-height: 1.3;
+            text-transform: uppercase;
+            margin-bottom: -rem(16);
+            & span{
+                font-weight: 400;
+                @include adaptiv-font(17, 13);
+                letter-spacing: -rem(1);
+                margin-left: -rem(10);
+            }
+        }
+        & p{
+            @include adaptiv-font(19, 15);
+            line-height: 1.3;
+            color: #747474;
+        }
+    }
+    &__img {
+        // position: absolute;
+        // top: 0;
+        // right: 0;
+        flex: 0 0 48%;
+        & img{
+            width: 100%
+        }
+    }
+}
+
