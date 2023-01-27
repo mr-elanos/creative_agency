@@ -24,3 +24,4 @@ new Swiper('.swiper', {
     centeredSlides: true,
     grabCursor: true,
 });
+
