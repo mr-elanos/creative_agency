@@ -500,7 +500,7 @@ body {
   margin-top: 7.3125rem;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .works {
     padding-bottom: 3.75rem;
   }
