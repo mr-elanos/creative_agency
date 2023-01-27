@@ -25,3 +25,18 @@ new Swiper('.swiper', {
     grabCursor: true,
 });
 
+//burger menu
+$(function(){
+    $('.header__burger-btn').click(function(e){
+        $('.header__burger-btn').toggleClass('header__burger-btn-active');
+        $('.header__burger-menu').toggleClass('header__burger-menu-active');
+        $('body').toggleClass('scroll__hidden');
+    });
+    $('.burger__btn').each(function(){
+        $(this).click(function(){
+            $('.header__burger-btn').removeClass('header__burger-btn-active');
+            $('.header__burger-menu').removeClass('header__burger-menu-active');
+            $('body').removeClass('scroll__hidden');
+        });
+    });
+});
