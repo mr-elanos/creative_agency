@@ -1101,6 +1101,9 @@ body {
 }
 
 @media (max-width: 767px) {
+  .footer__header-socials a:first-child img {
+    margin-left: 0rem;
+  }
   .footer__header {
     flex-direction: column;
     margin: 30px 0px;
