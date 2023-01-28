@@ -1,3 +1,4 @@
+/*carousel*/
 new Swiper('.swiper', {
     pagination: {
         el: '.swiper-pagination',
@@ -25,7 +26,7 @@ new Swiper('.swiper', {
     grabCursor: true,
 });
 
-//burger menu
+/*burger menu*/
 $(function(){
     $('.header__burger-btn').click(function(e){
         $('.header__burger-btn').toggleClass('header__burger-btn-active');

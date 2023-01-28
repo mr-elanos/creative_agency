@@ -1,11 +1,11 @@
 @import './null_style.scss';
 
-/*Функция для адаптации под широкие экраны*/
+/*function for all blocks adaptation on big screens*/
 @function -rem($px){
     @return $px / 16 + rem;
 }
 
-/*Миксин для адаптации шрифтов*/
+/*responsive font-size mixin*/
 $maxWidth: 1440;
 @mixin adaptiv-font($pcSize, $mobSize) {
     $addSize: $pcSize - $mobSize;
@@ -13,7 +13,7 @@ $maxWidth: 1440;
     font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
 }
 
-/*Шрифт по-умолчанию под большие экраны(адаптация блоков через rem)*/
+/*all blocks adaptation on big screens*/
 @media (min-width: 2000px){
     html, body{
         font-size: 20px; 
@@ -44,10 +44,12 @@ body{
     padding: 0px -rem(15);
 }
 
+/* for block scroll under active burger-menu */
 .scroll__hidden{
     overflow: hidden;
 }
 
+/* round buttons */
 .circle-btn{
     width: -rem(140);
     height: -rem(140);
