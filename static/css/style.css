@@ -69,6 +69,221 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: inherit;
 }
 
+@-webkit-keyframes logo {
+  0% {
+    opacity: 0;
+    transform: scale(50%, -100%);
+  }
+  10% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 0.4;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes logo {
+  0% {
+    opacity: 0;
+    transform: scale(50%, -100%);
+  }
+  10% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 0.4;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes nav_menu {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 0.4;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes nav_menu {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 0.4;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes main_img {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  10% {
+    opacity: 0.1;
+    transform: translateX(-90%);
+  }
+  20% {
+    opacity: 0.2;
+    transform: translateX(-70%);
+  }
+  40% {
+    opacity: 0.4;
+    transform: translateX(-50%);
+  }
+  60% {
+    opacity: 0.6;
+    transform: translateX(-30%);
+  }
+  80% {
+    opacity: 0.8;
+    transform: translateX(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes main_img {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  10% {
+    opacity: 0.1;
+    transform: translateX(-90%);
+  }
+  20% {
+    opacity: 0.2;
+    transform: translateX(-70%);
+  }
+  40% {
+    opacity: 0.4;
+    transform: translateX(-50%);
+  }
+  60% {
+    opacity: 0.6;
+    transform: translateX(-30%);
+  }
+  80% {
+    opacity: 0.8;
+    transform: translateX(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes main_h1 {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  10% {
+    opacity: 0.1;
+    transform: translateX(90%);
+  }
+  20% {
+    opacity: 0.1;
+    transform: translateX(70%);
+  }
+  40% {
+    opacity: 0.1;
+    transform: translateX(50%);
+  }
+  60% {
+    opacity: 0.2;
+    transform: translateX(30%);
+  }
+  80% {
+    opacity: 0.4;
+    transform: translateX(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes main_h1 {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  10% {
+    opacity: 0.1;
+    transform: translateX(90%);
+  }
+  20% {
+    opacity: 0.1;
+    transform: translateX(70%);
+  }
+  40% {
+    opacity: 0.1;
+    transform: translateX(50%);
+  }
+  60% {
+    opacity: 0.2;
+    transform: translateX(30%);
+  }
+  80% {
+    opacity: 0.4;
+    transform: translateX(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 /*function for all blocks adaptation on big screens*/
 /*responsive font-size mixin*/
 /*all blocks adaptation on big screens*/
@@ -140,6 +355,8 @@ body {
 }
 .header__container {
   position: relative;
+  -webkit-animation: nav_menu 0.5s linear;
+          animation: nav_menu 0.5s linear;
 }
 .header__content {
   display: flex;
@@ -179,8 +396,13 @@ body {
 }
 .header__logo {
   position: absolute;
-  top: 3.6875rem;
+  opacity: 0;
+  -webkit-animation: logo 0.5s ease 0.6s;
+          animation: logo 0.5s ease 0.6s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   left: 50%;
+  top: 3.6875rem;
   transform: translatex(-50%);
   width: 25.625rem;
   height: 14.625rem;
@@ -281,12 +503,15 @@ body {
   }
 }
 .main {
+  overflow: hidden;
   display: flex;
   padding-bottom: 8.0625rem;
 }
 .main__image {
   flex: 0 0 50%;
   height: 39.625rem;
+  -webkit-animation: main_img 0.5s linear;
+          animation: main_img 0.5s linear;
 }
 .main__image img {
   width: 100%;
@@ -298,6 +523,11 @@ body {
 }
 .main__content {
   margin: 6.375rem 5.625rem 0px 3.6875rem;
+  -webkit-animation: main_h1 0.5s linear 0.2s;
+          animation: main_h1 0.5s linear 0.2s;
+  opacity: 0;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 .main__content h1 {
   font-weight: 700;
@@ -390,6 +620,7 @@ body {
 .perfect__content {
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
 }
 .perfect__left {
   flex: 0 0 63%;

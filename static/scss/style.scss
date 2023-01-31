@@ -1,5 +1,42 @@
 @import './null_style.scss';
 
+@keyframes logo{
+    0%{opacity: 0; transform: scale(50%, -100%);}
+    10%{opacity: 0.1;}
+    20%{opacity: 0.2;}
+    40%{opacity: 0.4;}
+    60%{opacity: 0.6;}
+    80%{opacity: 0.8;}
+    100%{opacity: 1;}
+}
+@keyframes nav_menu {
+    0%{opacity: 0;}
+    10%{opacity: 0.1;}
+    20%{opacity: 0.2;}
+    40%{opacity: 0.4;}
+    60%{opacity: 0.6;}
+    80%{opacity: 0.8;}
+    100%{opacity: 1;}
+}
+@keyframes main_img{
+    0%{opacity: 0; transform: translateX(-100%);}
+    10%{opacity: 0.1; transform: translateX(-90%);}
+    20%{opacity: 0.2; transform: translateX(-70%);}
+    40%{opacity: 0.4; transform: translateX(-50%);}
+    60%{opacity: 0.6; transform: translateX(-30%);}
+    80%{opacity: 0.8; transform: translateX(-10%);}
+    100%{opacity: 1; transform: translateX(0);}
+}
+@keyframes main_h1{
+    0%{opacity: 0; transform: translateX(100%);}
+    10%{opacity: 0.1; transform: translateX(90%);}
+    20%{opacity: 0.1; transform: translateX(70%);}
+    40%{opacity: 0.1; transform: translateX(50%);}
+    60%{opacity: 0.2; transform: translateX(30%);}
+    80%{opacity: 0.4; transform: translateX(10%);}
+    100%{opacity: 1; transform: translateX(0);}
+}
+
 /*function for all blocks adaptation on big screens*/
 @function -rem($px){
     @return $px / 16 + rem;
@@ -82,6 +119,7 @@ body{
     }
     &__container{
         position: relative;
+        animation: nav_menu 0.5s linear;
     }
     &__content{
         display: flex;
@@ -125,8 +163,11 @@ body{
     }
     &__logo {
         position: absolute;
-        top:-rem(59);
+        opacity: 0;
+        animation: logo 0.5s ease 0.6s;
+        animation-fill-mode: forwards;
         left:50%;
+        top:-rem(59);
         transform:translatex(-50%);
         width: -rem(410);
         height: -rem(234);
@@ -228,11 +269,13 @@ body{
 }
 
 .main {
+    overflow: hidden;
     display: flex;
     padding-bottom: -rem(129);
     &__image {
         flex: 0 0 50%;
         height: -rem(634);
+        animation: main_img 0.5s linear;
         & img{
             width: 100%;
             height: 100%;
@@ -242,6 +285,9 @@ body{
     }
     &__content {
         margin: -rem(102) -rem(90) 0px -rem(59);
+        animation: main_h1 0.5s linear 0.2s;
+        opacity: 0;
+        animation-fill-mode: forwards;
         & h1{
             font-weight: 700;
             @include adaptiv-font(60, 30);
@@ -255,13 +301,15 @@ body{
             }
         }
     }
-    &__btn p{
-        display: block;
-        @include adaptiv-font(14, 10);
-        line-height: 1.4;
-        letter-spacing: -rem(1);
-        text-transform: uppercase;
-        color: #FFFFFF;
+    &__btn {
+        & p{
+            display: block;
+            @include adaptiv-font(14, 10);
+            line-height: 1.4;
+            letter-spacing: -rem(1);
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
     }
 }
 @media (max-width: 767px){
@@ -331,9 +379,12 @@ body{
             @include adaptiv-font(60, 30);
         }
     }
+    
     &__content{
         display: flex;
         justify-content: space-between;
+        overflow: hidden;
+        
     }
     &__left {
         flex: 0 0 63%;
@@ -344,10 +395,11 @@ body{
             color: #747474;
             margin-bottom: -rem(21);
         }
+        
     }
     &__right {
         margin-top: -rem(220);
-        flex: 1 0 31%
+        flex: 1 0 31%;
     }
     & ul {
         & li{
