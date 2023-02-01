@@ -612,6 +612,11 @@ body {
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 2rem;
+  opacity: 0;
+  transition: opacity 0.8s linear;
+}
+.perfect h2.show-anim {
+  opacity: 1;
 }
 .perfect h2 span {
   font-weight: 700;
@@ -624,6 +629,7 @@ body {
 }
 .perfect__left {
   flex: 0 0 63%;
+  overflow: hidden;
 }
 .perfect__left p {
   width: 23.5625rem;
@@ -631,10 +637,18 @@ body {
   line-height: 1.3;
   color: #747474;
   margin-bottom: 1.3125rem;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s linear;
+}
+.perfect__left p.show-anim {
+  transform: translateY(0);
+  opacity: 1;
 }
 .perfect__right {
   margin-top: 13.75rem;
   flex: 1 0 31%;
+  overflow: hidden;
 }
 .perfect ul li {
   display: flex;
@@ -644,6 +658,15 @@ body {
   line-height: 1.3;
   color: #747474;
   text-transform: capitalize;
+}
+.perfect ul:first-child, .perfect ul:last-child {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s linear;
+}
+.perfect ul:first-child.show-anim, .perfect ul:last-child.show-anim {
+  transform: translateY(0);
+  opacity: 1;
 }
 .perfect ul:first-child li:first-child, .perfect ul:last-child li:first-child {
   font-weight: 700;
@@ -684,6 +707,11 @@ body {
   justify-content: center;
   text-transform: uppercase;
   margin-bottom: 1.25rem;
+  opacity: 0;
+  transition: opacity 0.8s linear;
+}
+.works h2.show-anim {
+  opacity: 1;
 }
 .works h2 span {
   font-weight: 700;
@@ -728,7 +756,7 @@ body {
 .works__right {
   min-width: 29.375rem;
 }
-.works__right div:first-child {
+.works__right div:first-of-type {
   margin-top: 7.3125rem;
 }
 
@@ -772,6 +800,11 @@ body {
   letter-spacing: 0.0625rem;
   text-transform: uppercase;
   margin-bottom: 2.6875rem;
+  opacity: 0;
+  transition: opacity 0.8s linear;
+}
+.improve__content h2.show-anim {
+  opacity: 1;
 }
 .improve__content h2 span {
   font-weight: 400;
@@ -832,6 +865,11 @@ body {
   line-height: 1.2;
   text-transform: uppercase;
   margin-bottom: 7.5rem;
+  opacity: 0;
+  transition: opacity 0.8s linear;
+}
+.swiper__title.show-anim {
+  opacity: 1;
 }
 .swiper__title span {
   font-weight: 400;
@@ -919,6 +957,11 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 5.875rem;
+  opacity: 0;
+  transition: opacity 0.8s linear;
+}
+.skills__title.show-anim {
+  opacity: 1;
 }
 .skills__title span {
   padding: 0px 0.6875rem;
@@ -1016,6 +1059,11 @@ body {
   letter-spacing: 0.0625rem;
   text-transform: uppercase;
   margin-bottom: 4.0625rem;
+  opacity: 0;
+  transition: opacity 0.8s linear;
+}
+.facts__title.show-anim {
+  opacity: 1;
 }
 .facts__title span {
   font-weight: 700;
@@ -1094,6 +1142,11 @@ body {
   line-height: 1.3;
   letter-spacing: 0.0625rem;
   text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.8s linear;
+}
+.blog__header-title.show-anim {
+  opacity: 1;
 }
 .blog__header-title span {
   font-size: calc(40px + 20 * ((100vw - 320px) / 1120));
@@ -1182,6 +1235,11 @@ body {
   letter-spacing: 0.0625rem;
   text-transform: uppercase;
   color: #FFFFFF;
+  opacity: 0;
+  transition: opacity 0.8s linear;
+}
+.talk__text-title.show-anim {
+  opacity: 1;
 }
 .talk__text-title span {
   margin-right: 1.875rem;
