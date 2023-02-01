@@ -527,7 +527,7 @@ body{
     }
     &__right {
         min-width: -rem(470);
-        & div:first-of-type{
+        &:nth-child(2){
             margin-top: -rem(117);
         }
     }
@@ -541,8 +541,8 @@ body{
         &__columns {
             flex-direction: column;
         }
-        &__right div:first-child{
-            margin-top: 0px;
+        &__right:nth-child(2){
+            margin-top: -rem(0);
         }
         &__left {
             margin-right: 0px;

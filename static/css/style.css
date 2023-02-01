@@ -756,7 +756,7 @@ body {
 .works__right {
   min-width: 29.375rem;
 }
-.works__right div:first-of-type {
+.works__right:nth-child(2) {
   margin-top: 7.3125rem;
 }
 
@@ -770,8 +770,8 @@ body {
   .works__columns {
     flex-direction: column;
   }
-  .works__right div:first-child {
-    margin-top: 0px;
+  .works__right:nth-child(2) {
+    margin-top: 0rem;
   }
   .works__left {
     margin-right: 0px;
