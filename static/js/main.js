@@ -58,12 +58,13 @@ if (animItems.length > 0){
             if ((scrollY > animItemOffset - animItemPoint) && scrollY < (animItemOffset +animItemHeight)) {animItem.classList.add('show-anim')};
         };
     };
+    function offset(el){
+        const rect = el.getBoundingClientRect();
+        scrollLeft = window.scrollX || document.documentElement.scrollLeft;
+        scrollTop = window.scrollY || document.documentElement.scrollTop;
+        return {top: rect.top + scrollTop, left: rect.left + scrollLeft};
+    };
+    animOnScroll();
 };
 
-function offset(el){
-    const rect = el.getBoundingClientRect();
-    scrollLeft = window.scrollX || document.documentElement.scrollLeft;
-    scrollTop = window.scrollY || document.documentElement.scrollTop;
-    return {top: rect.top + scrollTop, left: rect.left + scrollLeft};
-}   
 
